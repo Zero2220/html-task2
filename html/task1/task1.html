@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link ref="stylesheet" href="task1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .btn1{
+            height: 50px;
+            width: 230px;
+            background-color: rgb(77, 77, 244);
+            color: white;
+            transition: 0.4s;
+            border: none;
+            border-radius: 14px;
+            padding-left: 220px;
+            padding-right: 285px;
+        }
+ 
+
+    .btn1:hover{
+    background-color:rgb(52, 52, 191); ;
+    }
+    .btn2{
+        height: 50px;
+            width: 230px;
+            background-color: rgb(77, 77, 244);
+            color: white;
+            transition: 0.4s;
+            border: none;
+            border-radius: 14px;
+            padding-left: 220px;
+            padding-right: 285px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" style="display: flex;">
+        <div style="height: 1200px; width: 500px; padding-left: 0; text-align: left;">
+           <span><img style="width: 100px;  height: 100px; padding-top: 40px;" href="http://www.w3.org/2000/svg"></span>
+           <div>
+            <h1 class="text1" style="padding-top: 50px;">Sign up</h1>
+           </div>
+           <div>
+            <p style=" padding-top: 30px;  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight:200;
+            color: gray; margin-right: 115px;" class="text2">His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table.</p>
+
+           </div>
+           <form>
+            <div class="form-group" style="padding-top: 40px;">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="name@adress.com">
+             
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="password1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">CONFIRM YOUR PASSWORD</label>
+                <input type="password" class="form-control" id="password2" placeholder="Password">
+            </div>
+            <button type="submit" id="btn2" class="btn1">SIGNUP</button>
+          </form>
+          <hr class="my-3 hr-text letter-spacing-2" data-content="OR">
+          <div class="d-grid gap-2">
+            <button class="btn btn btn-outline-primary btn-social"><i class="fa-2x fa-facebook-f fab btn-social-icon"> </i>Connect <span class="d-none d-sm-inline">with Facebook</span></button><br>
+            <button style="margin-top: 20px;" class="btn btn btn-outline-muted btn-social"><i class="fa-2x fa-google fab btn-social-icon"> </i>Connect <span class="d-none d-sm-inline">with Google</span></button>
+            <p class="text-sm text-muted">By signing up you agree to Directory's <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+          </div>
+        </div>
+        <div>
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <img src="..." class="rounded mr-2" alt="...">
+              <strong class="mr-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body" id="toast1">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    let button = document.getElementById("btn2");
+
+    button.addEventListener("click", function(event) {
+        event.preventDefault(); 
+
+        let email2 = document.getElementById("email1").value;
+        let password1 = document.getElementById("password1").value;
+        let password2 = document.getElementById("password2").value;
+
+        let regularExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        let isValidEmail = regularExpression.test(email2);
+        let passwordsMatch = password1 === password2;
+
+        if (!isValidEmail) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if (!passwordsMatch) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        
+        let toast = document.getElementById("toast1");
+        toast.innerHTML = "Successfully created!";
+    });
+});
+
+  
+  </script>
+</body>
+</html>
